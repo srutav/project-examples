@@ -7,8 +7,8 @@ node {
 
     stage 'Artifactory configuration'
         rtMaven.tool = maven // Tool name from Jenkins configuration
-        rtMaven.deployer releaseRepo:'libs-release-local', snapshotRepo:'libs-snapshot-local', server: server
-        rtMaven.resolver releaseRepo:'libs-release', snapshotRepo:'libs-snapshot', server: server
+        rtMaven.deployer releaseRepo:'example-repo-local', snapshotRepo:'maven-localsnap', server: server
+        rtMaven.resolver releaseRepo:'mavensample', snapshotRepo:'maven-snap', server: server
         def buildInfo = Artifactory.newBuildInfo()
 
     stage 'Exec Maven'
